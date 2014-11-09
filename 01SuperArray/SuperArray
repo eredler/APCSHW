@@ -1,0 +1,61 @@
+public class SuperArray{
+    Object[] arr;
+
+    public SuperArray(){
+	arr = new Object[10];
+    }
+
+    public SuperArray(int len){
+	arr = new Object[len];
+    }
+
+    public String toString(){
+	String ans = "[ ";
+	for (int i = 0; i < arr.length; i++){
+	    if (arr[i] != null){
+	    ans += arr[i];
+	    ans += " ";
+	    }
+	}
+	ans += "]";
+	return ans;
+    }
+
+    public void resize(int newSize){
+	Object[] newArr = new Object[newSize];
+	Object[] less;
+	Object[] more;
+	if (arr.length > newArr.length){
+	    more = arr;
+	    less = newArr;
+	} else {
+	    more = newArr;
+	    less = arr;
+	}
+	for (int i = 0; i < less.length; i++){
+	    newArr[i] = arr[i];
+	}
+	arr = newArr;
+    }
+
+    public void add(Object e){
+	Object[] newArr = new Object[arr.length+1];
+	for (int i = 0; i < arr.length; i++){
+	    newArr[i] = arr[i];
+	}
+	newArr[arr.length] = e;
+	arr = newArr;
+    }
+
+    public int size(){
+	int ans = 0;
+	for (int i = 0; i < arr.length; i++){
+	    if (arr[i] != null){
+		ans++;
+	    }
+	}
+	return ans;
+    }
+
+
+}
