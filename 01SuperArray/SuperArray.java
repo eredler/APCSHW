@@ -38,23 +38,41 @@ public class SuperArray{
 	arr = newArr;
     }
 
-    public void add(Object e){
-	Object[] newArr = new Object[arr.length+1];
+    public void add(Object o){
+	Object[] newArr;
+	if (size() >= arr.length){
+	    newArr = new Object[arr.length*2];
+	} else {
+	    newArr = new Object[arr.length];
+	}
 	for (int i = 0; i < arr.length; i++){
 	    newArr[i] = arr[i];
 	}
-	newArr[arr.length] = e;
+	newArr[size()] = o;
 	arr = newArr;
     }
 
-    public void add(Object e, int index){
-	Object[] newArr = new Object[arr.length+1];
-	for (int x = 0; x < index; x++){
-	    newArr[x] = arr[x];
+    public void add(Object o, int index){
+	Object[] newArr;
+	if (size() >= arr.length){
+	    newArr = new Object[arr.length*2];
+	} else {
+	    newArr = new Object[arr.length];
+	}
+	try {
+	    for (int x = 0; x < index; x++){
+		newArr[x] = arr[x];
 	    }
-	newArr[index] = e;
-	for (int y = index; y < arr.length; y++){
-	    newArr[y+1] = arr[y];
+	    newArr[index] = o;
+	    for (int y = index; y < size(); y++){
+		newArr[y+1] = arr[y];
+	    } 
+	}
+	catch (IndexOutOfBoundsException e) {
+	    System.out.println("The index needs to be greater than or equal to zero and less than " + size() + ".");	
+	    for (int i = 0; i < size(); i++){
+		newArr[i] = arr[i];
+	    }
 	}
 	arr = newArr;
     }
@@ -82,7 +100,11 @@ public class SuperArray{
     public Object get(int index){
         Object ans;
         try {
-	    ans = arr[index];
+	    if (index < size()){
+		ans = arr[index];
+	    } else {
+		ans  = "The index needs to be greater than or equal to zero and less than " + size() + ".";	
+	    }
 	}
 	catch (IndexOutOfBoundsException e){
 	    ans  = "The index needs to be greater than or equal to zero and less than " + size() + ".";		
@@ -91,20 +113,31 @@ public class SuperArray{
     }
 
     public Object remove(int index){
-	Object[] newArr = new Object[arr.length];
 	Object ans;
+	Object[] newArr;
+	if (size() <= arr.length/4){
+	    newArr = new Object[arr.length/2];
+	} else {
+	    newArr = new Object[arr.length];
+	}
 	    try	{
-		for (int i = 0; i < index; i++){
+		if (index < size()){
+		    for (int i = 0; i < index; i++){
+			newArr[i] = arr[i];
+		    }
+		    ans = arr[index];
+		    for (int i = index; i < size(); i++){
+			newArr[i] = arr[i+1];
+		    }
+		} else {
+		    ans = "The index needs to be greater than or equal to zero and less than " + size() + ".";
+		    for (int i = 0; i < arr.length; i++){
 		    newArr[i] = arr[i];
-		}
-		ans = arr[index];
-		for (int i = index; i < size(); i++){
-		    newArr[i] = arr[i+1];
+		    }
 		}
 	    }
 	    catch (IndexOutOfBoundsException e){
-		System.out.println("The index needs to be greater than or equal to zero and less than " + size() + ".");
-		ans = null;		
+	        ans = "The index needs to be greater than or equal to zero and less than " + size() + ".";		
 		for (int i = 0; i < arr.length; i++){
 		    newArr[i] = arr[i];
 		}
