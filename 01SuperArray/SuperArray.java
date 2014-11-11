@@ -80,12 +80,12 @@ public class SuperArray{
     }
 
     public Object get(int index){
-	Object ans;
-	if (index >= size() || index < 0){
-	    ans = null;
-	    System.out.println("The specified index is out of range.");
-	} else {
+        Object ans;
+        try {
 	    ans = arr[index];
+	}
+	catch (IndexOutOfBoundsException e){
+	    ans  = "The index needs to be greater than or equal to zero and less than " + size() + ".";		
 	}
 	return ans;
     }
@@ -93,21 +93,22 @@ public class SuperArray{
     public Object remove(int index){
 	Object[] newArr = new Object[arr.length];
 	Object ans;
-	if (index >= size() || index < 0){
-	    ans = null;
-	    System.out.println("The specified index is out of range.");
-	    for (int i = 0; i < arr.length; i++){
-		newArr[i] = arr[i];
+	    try	{
+		for (int i = 0; i < index; i++){
+		    newArr[i] = arr[i];
+		}
+		ans = arr[index];
+		for (int i = index; i < size(); i++){
+		    newArr[i] = arr[i+1];
+		}
 	    }
-	} else {
-	    for (int i = 0; i < index; i++){
-		newArr[i] = arr[i];
+	    catch (IndexOutOfBoundsException e){
+		System.out.println("The index needs to be greater than or equal to zero and less than " + size() + ".");
+		ans = null;		
+		for (int i = 0; i < arr.length; i++){
+		    newArr[i] = arr[i];
+		}
 	    }
-	    ans = arr[index];
-	    for (int i = index; i < size(); i++){
-		newArr[i] = arr[i+1];
-	    }
-	}
 	arr = newArr;
 	return ans;
     }
