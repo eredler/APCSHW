@@ -4,10 +4,7 @@ public class collapse {
 
     public static void collapseDuplicates(ArrayList<Integer> L){
 	for (int i = 1; i < L.size(); i++){
-	    System.out.println("arraylist when i is " + i + ":\t" + L.toString());
 	    if (L.get(i-1).equals(L.get(i))){
-		System.out.println(L.get(i-1) + " equals " + L.get(i)); 
-		System.out.println("index " + i + " (which is " + L.get(i) + ") will be removed");
 		L.remove(i);
 		i--;
 	    }
