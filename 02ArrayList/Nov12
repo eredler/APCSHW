@@ -1,0 +1,42 @@
+import java.util.ArrayList;
+
+public class Nov12 {
+
+    public void collapseDuplicates(ArrayList<Integer> L){
+	for (int i = 0; i < L.length-1; i++){
+	    if (L[i] == L[i+1]){
+		L.remove[i+1];
+		i++;
+	    }
+	}
+	
+    }
+
+    public Integer makeInt(int i){
+	Integer ans = new Integer(i);
+	return ans;
+    }
+
+    public static void main(String[]args){
+
+	ArrayList L = new ArrayList();
+	l.add(makeInt(1));
+	l.add(makeInt(9));
+	l.add(makeInt(3));
+	l.add(makeInt(3));
+	l.add(makeInt(4));
+	l.add(makeInt(2));
+	l.add(makeInt(2));
+	l.add(makeInt(2));
+	l.add(makeInt(7));
+	l.add(makeInt(8));
+	l.add(makeInt(8));
+	l.add(makeInt(8));
+	l.add(makeInt(8));
+	l.add(makeInt(9));
+	System.out.println(l);
+	collapseDuplicates(l);
+	System.out.println(l);
+    }
+
+}
