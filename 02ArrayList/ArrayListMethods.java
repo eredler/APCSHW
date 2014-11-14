@@ -17,8 +17,8 @@ public class ArrayListMethods {
     }
 
     public static void randomize(ArrayList<Integer> L){
+	Random r = new Random();
 	for (int i = L.size(); i > 0; i--){
-	    Random r = new Random();
 	    int x = r.nextInt(i);
 	    L.add(makeInt(L.get(x)));
 	    L.remove(L.get(x));
