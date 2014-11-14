@@ -16,6 +16,23 @@ public class ArrayListMethods {
 	return ans;
     }
 
+    public static void randomize(ArrayList<Integer> L){
+	for (int i = L.size(); i > 0; i--){
+	    Random r = new Random();
+	    int x = r.nextInt(i);
+	    L.add(makeInt(L.get(x)));
+	    L.remove(L.get(x));
+	}
+    }
+
+    public static ArrayList<Integer> makeArrayListOfConsec(int length){
+	ArrayList<Integer> ans = new ArrayList<Integer>();	    
+	for (int i = 0; i < length; i++){
+	    ans.add(makeInt(i));
+	}
+	return ans;
+    }
+
     public static void main(String[]args){
 
 	ArrayList<Integer> L = new ArrayList<Integer>();
@@ -36,6 +53,11 @@ public class ArrayListMethods {
 	System.out.println(L);
 	collapseDuplicates(L);
 	System.out.println(L);
+	ArrayList<Integer> example = new ArrayList<Integer>();
+	example = makeArrayListOfConsec(20);
+	System.out.println(example);
+	randomize(example);
+	System.out.println(example);
     }
 
 }
