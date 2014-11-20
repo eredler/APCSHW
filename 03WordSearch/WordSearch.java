@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class WordSearch{
 
     private char[][] data;
@@ -28,19 +30,44 @@ public class WordSearch{
 	return ans;
     }
 
+    public boolean checkWordHorizontal(String word, int row, int col){
+	boolean ans = true;
+	
+	for (int i = 0; i < word.length(); i++){
+	    if (data[row][col+i] != " " && data[row][col+i] != word.charAt[i]()){
+		ans = false;
+		i = word.length();
+	    }
+	}
+	return ans;
+    }
 
-    public boolean addWordHorizontal(String word,int row, int col){
+    public boolean addWordHorizontal(String word, int row, int col){
+	boolean ans = false;	
+	
+	for (int i = 0; i < word.length(); i++){
+	    if (word.length() < data[row].length - col){
+		break;
+	    } else if (data[row][col+i] == " " || data[row][col+i]){
+		data[row][col+i] = word.charAt[i]();
+	    } else
+	    }
 
+	return ans;
     }
 
 
-    public boolean addWordVertical(String word,int row, int col){
-
+    public boolean addWordVertical(String word, int row, int col){
+	boolean ans = false;
+	
+	return ans;
     }
 
 
-    public boolean addWordDiagonal(String word,int row, int col){
-
+    public boolean addWordDiagonal(String word, int row, int col){
+	boolean ans = false;
+	
+	return ans;
     }
 
 
