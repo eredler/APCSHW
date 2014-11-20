@@ -30,11 +30,12 @@ public class WordSearch{
 	return ans;
     }
 
+
     public boolean checkWordHorizontal(String word, int row, int col){
 	boolean ans = true;
 	
 	for (int i = 0; i < word.length(); i++){
-	    if (data[row][col+i] != " " && data[row][col+i] != word.charAt[i]()){
+	    if (data[row][col+i] != ' ' && data[row][col+i] != word.charAt(i)){
 		ans = false;
 		i = word.length();
 	    }
@@ -42,16 +43,45 @@ public class WordSearch{
 	return ans;
     }
 
+
+     public boolean checkWordVertical(String word, int row, int col){
+	boolean ans = true;
+	
+	for (int i = 0; i < word.length(); i++){
+	    if (data[row+i][col] != ' ' && data[row+i][col] != word.charAt(i)){
+		ans = false;
+		i = word.length();
+	    }
+	}
+	return ans;
+    }
+
+
+     public boolean checkWordDiagonal(String word, int row, int col){
+	boolean ans = true;
+	
+	for (int i = 0; i < word.length(); i++){
+	    if (data[row+i][col+i] != ' ' && data[row+i][col+i] != word.charAt(i)){
+		ans = false;
+		i = word.length();
+	    }
+	}
+	return ans;
+    }
+
+
     public boolean addWordHorizontal(String word, int row, int col){
 	boolean ans = false;	
 	
 	for (int i = 0; i < word.length(); i++){
 	    if (word.length() < data[row].length - col){
 		break;
-	    } else if (data[row][col+i] == " " || data[row][col+i]){
-		data[row][col+i] = word.charAt[i]();
-	    } else
+	    } else if (checkWordHorizontal(word, row, col)){
+		data[row][col+i] = word.charAt(i);
+	    } else {
+		i = data[row].length;
 	    }
+	}
 
 	return ans;
     }
@@ -59,7 +89,17 @@ public class WordSearch{
 
     public boolean addWordVertical(String word, int row, int col){
 	boolean ans = false;
-	
+
+	for (int i = 0; i < word.length(); i++){
+	    if (word.length() < data.length - row){
+		break;
+	    } else if (checkWordVertical(word, row, col)){
+		data[row+i][col] = word.charAt(i);
+	    } else {
+		i = data.length;
+	    }
+	}	
+
 	return ans;
     }
 
@@ -67,6 +107,16 @@ public class WordSearch{
     public boolean addWordDiagonal(String word, int row, int col){
 	boolean ans = false;
 	
+	for (int i = 0; i < word.length(); i++){
+	    if (word.length() < data.length - row && word.length() < data[i].length - col){
+		break;
+	    } else if (checkWordVertical(word, row, col)){
+		data[row+i][col+i] = word.charAt(i);
+	    } else {
+		i = data.length;
+	    }
+	}
+
 	return ans;
     }
 
