@@ -8,7 +8,6 @@ public class WordSearch{
 	data = new char[rows][cols];
     }
 
-
     private void clear(){
 	for (int i = 0; i < data.length; i++){
 	    for (int x = 0; i < data[i].length; x++){
