@@ -1,8 +1,27 @@
 import java.util.*;
+import java.io.*;
 
 public class WordSearch{
 
     private char[][] data;
+      
+
+    public static void doIt(){
+	ArrayList<String> lines = new ArrayList<String>();
+	 try{
+	     Scanner sc = new Scanner(new File("wordList.rtf"));
+	     while (sc.hasNextLine()) {
+		 lines.add(sc.nextLine());
+	     }	    
+	     String[] arr = lines.toArray(new String[0]);
+	     //   System.out.println(lines);
+	 }
+	 catch (FileNotFoundException e){
+	     System.out.println("file not found");
+	 }
+	
+    }
+    
 
     public WordSearch(int rows, int cols){
 	data = new char[rows][cols];
@@ -21,7 +40,7 @@ public class WordSearch{
 	String ans = "";
 
 	for (int i = 0; i < data.length; i++){
-	    for (int x = 0; i < data[i].length; x++){
+	    for (int x = 0; x < data[i].length; x++){
 		ans += data[i][x] + " ";
 	    }
 	    ans += "\n";

@@ -3,6 +3,7 @@ import java.util.*;
 public class WordSearchTester {
 
     public static void main(String[]args){
+	WordSearch.doIt();
 
 	Random r = new Random();
 
@@ -39,7 +40,7 @@ public class WordSearchTester {
 	}
 	//	example.addWordHorizontal("hello",0,0);
 	System.out.println(example.toString());
-
+	
     }
 
 }
