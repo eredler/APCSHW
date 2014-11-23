@@ -113,32 +113,22 @@ public class WordSearch{
 
 	return ans;
     }
-
+    //ADD 50 TRY CHECKER
     //
     //tries 50 times (at most) to add a certain word to the word search horizontally
     //
     public boolean addWordHorizontal(String word, int row, int col){
-	boolean ans = false;	
-	boolean whatwhat = false;
+	boolean ans = false;    
 
-	for (int trynum = 0; trynum < 50; trynum++){
-	    if (whatwhat = false){
-		for (int i = 0; i < word.length(); i++){
-		    if (word.length() < data[row].length - col){
-			break;
+	for (int i = 0; i < word.length(); i++){
+	    if (word.length() < data[row].length - col){
+		break;
 		    } else if (checkWordHorizontal(word, row, col)){
-			data[row][col+i] = word.charAt(i);
-			whatwhat = true;
-		    } else {
-			i = data[row].length;
-		    }
-		}
-		trynum++;
+		data[row][col+i] = word.charAt(i);
 	    } else {
-		trynum = 50;
+		i = data[row].length;
 	    }
 	}
-
 	return ans;
     }
 
