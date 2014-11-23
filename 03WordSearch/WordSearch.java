@@ -5,37 +5,50 @@ public class WordSearch{
 
     private char[][] data;
       
-
-    public static void doIt(){
+    //
+    //create wordList 
+    //
+    public static String[] doIt(){
 	ArrayList<String> lines = new ArrayList<String>();
 	 try{
 	     Scanner sc = new Scanner(new File("wordList.rtf"));
 	     while (sc.hasNextLine()) {
 		 lines.add(sc.nextLine());
 	     }	    
-	     String[] arr = lines.toArray(new String[0]);
+	     String[] arr = lines.toArray(new String[lines.size()]);
 	     //   System.out.println(lines);
+	     return arr;
 	 }
 	 catch (FileNotFoundException e){
 	     System.out.println("file not found");
+	     String[] arr = lines.toArray(new String[lines.size()]);
+	     return arr;
 	 }
-	
+	 	
     }
     
-
+    //
+    //initialize blank word search
+    //
     public WordSearch(int rows, int cols){
 	data = new char[rows][cols];
+	clear();
     }
 
+    //
+    //clear word search (fill each space with ' ')
+    //
     private void clear(){
 	for (int i = 0; i < data.length; i++){
-	    for (int x = 0; i < data[i].length; x++){
+	    for (int x = 0; x < data[i].length; x++){
 		data[i][x] = ' ';
 	    }
 	}
     }
 
-
+    //
+    //turn word search into a printable string
+    //
     public String toString(){
 	String ans = "";
 
@@ -49,21 +62,30 @@ public class WordSearch{
 	return ans;
     }
 
-
+    //
+    //check if word fits starting at (row,col) horizontally
+    //
     public boolean checkWordHorizontal(String word, int row, int col){
 	boolean ans = true;
 	
 	for (int i = 0; i < word.length(); i++){
-	    if (data[row][col+i] != ' ' && data[row][col+i] != word.charAt(i)){
+	    try{
+		if (data[row][col+i] != ' ' && data[row][col+i] != word.charAt(i)){
+		    ans = false;
+		    i = word.length();
+		}
+	    }
+	    catch (IndexOutOfBoundsException e){
 		ans = false;
-		i = word.length();
 	    }
 	}
 
 	return ans;
     }
 
-
+    //
+    //check if word fits starting at (row,col) vertically
+    //
      public boolean checkWordVertical(String word, int row, int col){
 	boolean ans = true;
 	
@@ -76,7 +98,9 @@ public class WordSearch{
 	return ans;
     }
 
-
+    //
+    //check if word fits starting at (row,col) diagonally
+    //
      public boolean checkWordDiagonal(String word, int row, int col){
 	boolean ans = true;
 	
@@ -90,24 +114,38 @@ public class WordSearch{
 	return ans;
     }
 
-
+    //
+    //tries 50 times (at most) to add a certain word to the word search horizontally
+    //
     public boolean addWordHorizontal(String word, int row, int col){
 	boolean ans = false;	
-	
-	for (int i = 0; i < word.length(); i++){
-	    if (word.length() < data[row].length - col){
-		break;
-	    } else if (checkWordHorizontal(word, row, col)){
-		data[row][col+i] = word.charAt(i);
+	boolean whatwhat = false;
+
+	for (int trynum = 0; trynum < 50; trynum++){
+	    if (whatwhat = false){
+		for (int i = 0; i < word.length(); i++){
+		    if (word.length() < data[row].length - col){
+			break;
+		    } else if (checkWordHorizontal(word, row, col)){
+			data[row][col+i] = word.charAt(i);
+			whatwhat = true;
+		    } else {
+			i = data[row].length;
+		    }
+		}
+		trynum++;
 	    } else {
-		i = data[row].length;
+		trynum = 50;
 	    }
 	}
 
 	return ans;
     }
 
-
+    //ADD 50 TRY CHECKER
+    //
+    //tries 50 times (at most) to add a certain word to the word search vertically
+    //
     public boolean addWordVertical(String word, int row, int col){
 	boolean ans = false;
 
@@ -124,7 +162,10 @@ public class WordSearch{
 	return ans;
     }
 
-
+    //ADD 50 TRY CHECKER
+    //
+    //tries 50 times (at most) to add a certain word to the word search diagonally
+    //
     public boolean addWordDiagonal(String word, int row, int col){
 	boolean ans = false;
 	

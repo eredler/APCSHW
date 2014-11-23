@@ -3,10 +3,11 @@ import java.util.*;
 public class WordSearchTester {
 
     public static void main(String[]args){
-	WordSearch.doIt();
+	//	ArrayList<String> temp = WordSearch.doIt();
 
 	Random r = new Random();
 
+	//	String[] wordBank = WordSearch.doIt();
 	String[] wordBank = new String[10];
 	wordBank[0] = "abhor";
 	wordBank[1] = "bigot";
@@ -21,11 +22,10 @@ public class WordSearchTester {
 
 	WordSearch example = new WordSearch(20,20);
 
-	System.out.println(example.toString());
-	
+	//	System.out.println(example.toString());
 	for (int i = 0; i < wordBank.length; i++){
-	    int what = r.nextInt(3);
-	    switch (what){
+	    //  int what = r.nextInt(3);
+	    /*  switch (what){
 	    case 0:
 		example.addWordHorizontal(wordBank[i], r.nextInt(20), r.nextInt(20));
 		    break;
@@ -35,8 +35,9 @@ public class WordSearchTester {
 	    case 2: 
 		example.addWordDiagonal(wordBank[i], r.nextInt(20), r.nextInt(20));
 		break;
-	    }
-;
+		}*/
+	    example.addWordHorizontal(wordBank[i], r.nextInt(20), r.nextInt(20));
+	   
 	}
 	//	example.addWordHorizontal("hello",0,0);
 	System.out.println(example.toString());
