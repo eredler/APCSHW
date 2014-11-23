@@ -113,7 +113,7 @@ public class WordSearch{
 
 	return ans;
     }
-    //ADD 50 TRY CHECKER
+
     //
     //tries 50 times (at most) to add a certain word to the word search horizontally
     //
@@ -123,10 +123,11 @@ public class WordSearch{
 	for (int i = 0; i < word.length(); i++){
 	    if (word.length() < data[row].length - col){
 		break;
-		    } else if (checkWordHorizontal(word, row, col)){
+	    } else if (checkWordHorizontal(word, row, col)){
 		data[row][col+i] = word.charAt(i);
+		ans = true;
 	    } else {
-		i = data[row].length;
+	        break;
 	    }
 	}
 	return ans;

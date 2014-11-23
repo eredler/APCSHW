@@ -36,8 +36,19 @@ public class WordSearchTester {
 		example.addWordDiagonal(wordBank[i], r.nextInt(20), r.nextInt(20));
 		break;
 		}*/
-	    example.addWordHorizontal(wordBank[i], r.nextInt(20), r.nextInt(20));
-	   
+	    boolean success = false;
+	    int trynum = 0;
+	    while (trynum < 50){		
+		System.out.println("word: " + wordBank[i]);
+		System.out.println("trynum = " + trynum);
+		System.out.println("Success: " + success);
+		if (success == false){
+		    success = example.addWordHorizontal(wordBank[i], r.nextInt(20), r.nextInt(20));
+		    trynum++;
+		} else {
+		    trynum = 50;
+		}
+	    }
 	}
 	//	example.addWordHorizontal("hello",0,0);
 	System.out.println(example.toString());
