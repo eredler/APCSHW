@@ -15,15 +15,15 @@ public class WordSearchTester {
 	String[] wordBank = WordSearch.doIt();
 	//	String[] wordBank = new String[10];
 	/*	wordBank[0] = "abhor";
-	wordBank[1] = "bigot";
-	wordBank[2] = "counterfeit";
-	wordBank[3] = "enfranchise";
-	wordBank[4] = "hamper";
-	wordBank[5] = "kindle";
-	wordBank[6] = "noxious";
-	wordBank[7] = "placid";
-	wordBank[8] = "renumeration";
-	wordBank[9] = "talisman";*/
+		wordBank[1] = "bigot";
+		wordBank[2] = "counterfeit";
+		wordBank[3] = "enfranchise";
+		wordBank[4] = "hamper";
+		wordBank[5] = "kindle";
+		wordBank[6] = "noxious";
+		wordBank[7] = "placid";
+		wordBank[8] = "renumeration";
+		wordBank[9] = "talisman";*/
 
 	WordSearch example = new WordSearch(numrows,numcols);
 
@@ -40,11 +40,11 @@ public class WordSearchTester {
 		i = wordBank.length;
 	    }
 	    while (trynum < effort){
-		int what = r.nextInt(4);
+		int what = r.nextInt(8);
 		switch (what){
 		case 0:
 		    if (success == false){
-			success = example.addWordHorizontal(wordBank[spot], r.nextInt(numrows), r.nextInt(numcols));
+			success = example.addWordHorizontal(wordBank[spot], r.nextInt(numrows), r.nextInt(numcols),true);
 			trynum++;
 		    } else {
 		        trynum = effort;
@@ -53,7 +53,7 @@ public class WordSearchTester {
 		    break;
 		case 1:
 		    if (success == false){
-			success = example.addWordVertical(wordBank[spot], r.nextInt(numrows), r.nextInt(numcols));
+			success = example.addWordVertical(wordBank[spot], r.nextInt(numrows), r.nextInt(numcols),true);
 			trynum++;
 		    } else {
 		        trynum = effort;
@@ -62,23 +62,59 @@ public class WordSearchTester {
 		    break;
 		case 2: 
 		    if (success == false){
-			success = example.addWordDiagonalRight(wordBank[spot], r.nextInt(numrows), r.nextInt(numcols));
+			success = example.addWordDiagonalRight(wordBank[spot], r.nextInt(numrows), r.nextInt(numcols),true);
 			trynum++;
 		    } else {
 		        trynum = effort;
 			wordsUsed.add(wordBank[spot]);
 		    }
 		    break;		
-	    case 3: 
-		if (success == false){
-		    success = example.addWordDiagonalLeft(wordBank[spot], r.nextInt(numrows), r.nextInt(numcols));
-		    trynum++;
-		} else {
-		    trynum = effort;
-		    wordsUsed.add(wordBank[spot]);
+		case 3: 
+		    if (success == false){
+			success = example.addWordDiagonalLeft(wordBank[spot], r.nextInt(numrows), r.nextInt(numcols),true);
+			trynum++;
+		    } else {
+			trynum = effort;
+			wordsUsed.add(wordBank[spot]);
+		    }
+		    break;
+		case 4:
+		    if (success == false){
+			success = example.addWordHorizontal(wordBank[spot], r.nextInt(numrows), r.nextInt(numcols),false);
+			trynum++;
+		    } else {
+		        trynum = effort;
+			wordsUsed.add(wordBank[spot]);
+		    }
+		    break;
+		case 5:
+		    if (success == false){
+			success = example.addWordVertical(wordBank[spot], r.nextInt(numrows), r.nextInt(numcols),false);
+			trynum++;
+		    } else {
+		        trynum = effort;
+			wordsUsed.add(wordBank[spot]);
+		    }
+		    break;
+		case 6: 
+		    if (success == false){
+			success = example.addWordDiagonalRight(wordBank[spot], r.nextInt(numrows), r.nextInt(numcols),false);
+			trynum++;
+		    } else {
+		        trynum = effort;
+			wordsUsed.add(wordBank[spot]);
+		    }
+		    break;		
+		case 7: 
+		    if (success == false){
+			success = example.addWordDiagonalLeft(wordBank[spot], r.nextInt(numrows), r.nextInt(numcols),false);
+			trynum++;
+		    } else {
+			trynum = effort;
+			wordsUsed.add(wordBank[spot]);
+		    }
+		    break;
 		}
-		break;
-	    }
 	   		
 		//	System.out.println("word: " + wordBank[i]);
 		//	System.out.println("trynum = " + trynum);
