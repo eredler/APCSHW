@@ -11,7 +11,7 @@ public class WordSearch{
     public static String[] doIt(){
 	ArrayList<String> lines = new ArrayList<String>();
 	 try{
-	     Scanner sc = new Scanner(new File("wordList.rtf"));
+	     Scanner sc = new Scanner(new File("wordListCopy.txt"));
 	     while (sc.hasNextLine()) {
 		 lines.add(sc.nextLine());
 	     }	    
@@ -89,12 +89,20 @@ public class WordSearch{
     //
      public boolean checkWordVertical(String word, int row, int col){
 	boolean ans = true;
-	
+        
 	for (int i = 0; i < word.length(); i++){
-	    if (data[row+i][col] != ' ' && data[row+i][col] != word.charAt(i)){
-		ans = false;
-		i = word.length();
+	    try{
+		if (data[row+i][col] != '.' && data[row+i][col] != word.charAt(i)){
+		    ans = false;
+		     break;
+		}
+		
 	    }
+	    catch (IndexOutOfBoundsException e){
+		ans = false;
+		break;
+	    }
+	   
 	}
 	return ans;
     }
@@ -104,14 +112,20 @@ public class WordSearch{
     //
      public boolean checkWordDiagonal(String word, int row, int col){
 	boolean ans = true;
-	
 	for (int i = 0; i < word.length(); i++){
-	    if (data[row+i][col+i] != ' ' && data[row+i][col+i] != word.charAt(i)){
-		ans = false;
-		i = word.length();
+	    try{
+		if (data[row+i][col+i] != '.' && data[row+i][col+i] != word.charAt(i)){
+		    ans = false;
+		     break;
+		}
+		
 	    }
+	    catch (IndexOutOfBoundsException e){
+		ans = false;
+		break;
+	    }
+	   
 	}
-
 	return ans;
     }
 
@@ -138,16 +152,12 @@ public class WordSearch{
     public boolean addWordVertical(String word, int row, int col){
 	boolean ans = false;
 
-	for (int i = 0; i < word.length(); i++){
-	    if (word.length() < data.length - row){
-		break;
-	    } else if (checkWordVertical(word, row, col)){
+	if (checkWordVertical(word, row, col)){
+	    for (int i = 0; i < word.length(); i++){
 		data[row+i][col] = word.charAt(i);
-	    } else {
-		i = data.length;
 	    }
-	}	
-
+	    ans = true;
+	}
 	return ans;
     }
 
@@ -158,14 +168,11 @@ public class WordSearch{
     public boolean addWordDiagonal(String word, int row, int col){
 	boolean ans = false;
 	
-	for (int i = 0; i < word.length(); i++){
-	    if (word.length() < data.length - row && word.length() < data[i].length - col){
-		break;
-	    } else if (checkWordVertical(word, row, col)){
+	if (checkWordDiagonal(word, row, col)){
+	    for (int i = 0; i < word.length(); i++){
 		data[row+i][col+i] = word.charAt(i);
-	    } else {
-		i = data.length;
 	    }
+	    ans = true;
 	}
 
 	return ans;
