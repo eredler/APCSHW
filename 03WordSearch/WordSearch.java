@@ -3,7 +3,8 @@ import java.io.*;
 
 public class WordSearch{
 
-    private char[][] data;
+    private char[][] data; 
+    Random r = new Random();
       
     //
     //create wordList 
@@ -176,6 +177,20 @@ public class WordSearch{
 	}
 
 	return ans;
+    }
+
+    //
+    //fill empty spots with a random letter a-z
+    //
+    public void fillEmpty(){
+	for (int i = 0; i < data.length; i++){
+	    for (int x = 0; x < data[0].length; x++){
+		char c = (char)(r.nextInt(26) + 'a');
+		if (data[i][x] == '.'){
+		data[i][x] = c;
+		}
+	    }
+	}
     }
 
 }

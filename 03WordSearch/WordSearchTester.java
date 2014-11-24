@@ -7,7 +7,7 @@ public class WordSearchTester {
 	int numrows = 20;
 	int numcols = 20;
 	int effort = 10;
-
+	int howManyWords = 20;
 
 	Random r = new Random();
 	ArrayList<String> wordsUsed = new ArrayList<String>();
@@ -34,6 +34,10 @@ public class WordSearchTester {
 	    int spot = r.nextInt(wordBank.length);
 	    if (wordsUsed.contains(wordBank[spot])){
 		trynum = effort;
+	    }
+	    if (wordsUsed.size() > howManyWords){
+		trynum = effort;
+		i = wordBank.length;
 	    }
 	    while (trynum < effort){
 		int what = r.nextInt(3);
@@ -73,7 +77,9 @@ public class WordSearchTester {
 	    }
 	}
 	//	example.addWordHorizontal("hello",0,0);
+	example.fillEmpty();
 	System.out.println(example.toString());
+	System.out.println(wordsUsed);
 	
     }
 
