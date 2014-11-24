@@ -67,23 +67,16 @@ public class WordSearch{
     //
     public boolean checkWordHorizontal(String word, int row, int col){
 	boolean ans = true;
-	System.out.println(word + " starting at " + row + " " + col);
 	for (int i = 0; i < word.length(); i++){
 	    try{
 		if (data[row][col+i] != '.' && data[row][col+i] != word.charAt(i)){
 		    ans = false;
-		    System.out.println("doesn't work " + word + " row: " + row + " col: " + (col+i));
-		    System.out.println();
 		     break;
-		} else {
-		    System.out.println("works so far " + word + " row: " + row + " col: " + (col+i));
 		}
 		
 	    }
 	    catch (IndexOutOfBoundsException e){
 		ans = false;
-		System.out.println("exception " + word + " row: " + row + " col: " + (col+i));
-		System.out.println();
 		break;
 	    }
 	   
