@@ -111,11 +111,30 @@ public class WordSearch{
     //
     //check if word fits starting at (row,col) diagonally
     //
-     public boolean checkWordDiagonal(String word, int row, int col){
+     public boolean checkWordDiagonalRight(String word, int row, int col){
 	boolean ans = true;
 	for (int i = 0; i < word.length(); i++){
 	    try{
 		if (data[row+i][col+i] != '.' && data[row+i][col+i] != word.charAt(i)){
+		    ans = false;
+		     break;
+		}
+		
+	    }
+	    catch (IndexOutOfBoundsException e){
+		ans = false;
+		break;
+	    }
+	   
+	}
+	return ans;
+    }
+
+     public boolean checkWordDiagonalLeft(String word, int row, int col){
+	boolean ans = true;
+	for (int i = 0; i < word.length(); i++){
+	    try{
+		if (data[row+i][col-i] != '.' && data[row+i][col-i] != word.charAt(i)){
 		    ans = false;
 		     break;
 		}
@@ -166,10 +185,23 @@ public class WordSearch{
     //
     //tries 50 times (at most) to add a certain word to the word search diagonally
     //
-    public boolean addWordDiagonal(String word, int row, int col){
+    public boolean addWordDiagonalRight(String word, int row, int col){
 	boolean ans = false;
 	
-	if (checkWordDiagonal(word, row, col)){
+	if (checkWordDiagonalRight(word, row, col)){
+	    for (int i = 0; i < word.length(); i++){
+		data[row+i][col+i] = word.charAt(i);
+	    }
+	    ans = true;
+	}
+
+	return ans;
+    }
+
+public boolean addWordDiagonalLeft(String word, int row, int col){
+	boolean ans = false;
+	
+	if (checkWordDiagonalLeft(word, row, col)){
 	    for (int i = 0; i < word.length(); i++){
 		data[row+i][col+i] = word.charAt(i);
 	    }

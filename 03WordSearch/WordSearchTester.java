@@ -40,7 +40,7 @@ public class WordSearchTester {
 		i = wordBank.length;
 	    }
 	    while (trynum < effort){
-		int what = r.nextInt(3);
+		int what = r.nextInt(4);
 		switch (what){
 		case 0:
 		    if (success == false){
@@ -62,14 +62,23 @@ public class WordSearchTester {
 		    break;
 		case 2: 
 		    if (success == false){
-			success = example.addWordDiagonal(wordBank[spot], r.nextInt(numrows), r.nextInt(numcols));
+			success = example.addWordDiagonalRight(wordBank[spot], r.nextInt(numrows), r.nextInt(numcols));
 			trynum++;
 		    } else {
 		        trynum = effort;
 			wordsUsed.add(wordBank[spot]);
 		    }
-		    break;
+		    break;		
+	    case 3: 
+		if (success == false){
+		    success = example.addWordDiagonalLeft(wordBank[spot], r.nextInt(numrows), r.nextInt(numcols));
+		    trynum++;
+		} else {
+		    trynum = effort;
+		    wordsUsed.add(wordBank[spot]);
 		}
+		break;
+	    }
 	   		
 		//	System.out.println("word: " + wordBank[i]);
 		//	System.out.println("trynum = " + trynum);
