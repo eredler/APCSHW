@@ -41,7 +41,7 @@ public class WordSearch{
     private void clear(){
 	for (int i = 0; i < data.length; i++){
 	    for (int x = 0; x < data[i].length; x++){
-		data[i][x] = ' ';
+		data[i][x] = '.';
 	    }
 	}
     }
@@ -67,19 +67,27 @@ public class WordSearch{
     //
     public boolean checkWordHorizontal(String word, int row, int col){
 	boolean ans = true;
-	
+	System.out.println(word + " starting at " + row + " " + col);
 	for (int i = 0; i < word.length(); i++){
 	    try{
-		if (data[row][col+i] != ' ' && data[row][col+i] != word.charAt(i)){
+		if (data[row][col+i] != '.' && data[row][col+i] != word.charAt(i)){
 		    ans = false;
-		    i = word.length();
+		    System.out.println("doesn't work " + word + " row: " + row + " col: " + (col+i));
+		    System.out.println();
+		     break;
+		} else {
+		    System.out.println("works so far " + word + " row: " + row + " col: " + (col+i));
 		}
+		
 	    }
 	    catch (IndexOutOfBoundsException e){
 		ans = false;
+		System.out.println("exception " + word + " row: " + row + " col: " + (col+i));
+		System.out.println();
+		break;
 	    }
+	   
 	}
-
 	return ans;
     }
 
@@ -120,16 +128,13 @@ public class WordSearch{
     public boolean addWordHorizontal(String word, int row, int col){
 	boolean ans = false;    
 
-	for (int i = 0; i < word.length(); i++){
-	    if (word.length() < data[row].length - col){
-		break;
-	    } else if (checkWordHorizontal(word, row, col)){
+	if (checkWordHorizontal(word, row, col)){
+	    for (int i = 0; i < word.length(); i++){
 		data[row][col+i] = word.charAt(i);
-		ans = true;
-	    } else {
-	        break;
 	    }
+	    ans = true;
 	}
+
 	return ans;
     }
 
