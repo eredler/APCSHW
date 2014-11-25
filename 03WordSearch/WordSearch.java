@@ -64,6 +64,28 @@ public class WordSearch{
     }
 
     //
+    //check word in direction dx,dy 
+    //
+    //
+    public boolean checkWord(String word, int row, int col, int dx, int dy){
+        boolean ans = true;
+	    for (int i = 0; i < word.length(); i++){
+	         try{
+	    	  if (data[row+dy][col+dx] != '.' && data[row+dy][col+dx] != word.charAt(i)){
+		        	ans = false;
+		        	break;
+		          } 
+	          	}		
+	         }
+	         catch (IndexOutOfBoundsException e){
+	        	ans = false;
+	        	break;
+	      }
+	return ans;
+    }
+    
+    
+    
     //check if word fits starting at (row,col) horizontally
     //
     public boolean checkWordHorizontal(String word, int row, int col, boolean forward){
