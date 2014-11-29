@@ -278,7 +278,7 @@ adipocere
 adipose
 adit
 adj
-adj.escaping
+adjescaping
 adjacency
 adjection
 adjectitious
@@ -1264,7 +1264,7 @@ azote
 azotic
 azygous
 b‚vue
-b.c
+bc
 baal
 babblement
 babbler
@@ -1302,7 +1302,7 @@ backwoods
 backwoodsman
 badaud
 badger
-badger*
+badger
 badli
 badtempered
 baedeker
@@ -1342,7 +1342,7 @@ balneation
 balourdise
 balsamic
 baluster
-bam*
+bam
 bambino
 bamboozle
 ban[japanese]
@@ -1460,7 +1460,7 @@ beadroll
 beads
 beadsman
 beagle
-beak*
+beak
 beaked
 beaker
 beaming
@@ -1472,7 +1472,7 @@ bearer
 bearing
 bearings
 bearskin
-beat*
+beat
 beatic
 beatification
 beatified
@@ -1789,7 +1789,7 @@ blowed
 blowhole
 blowing
 blowout
-blowout*
+blowout
 blowpipe
 blowth
 blowzy
@@ -1804,7 +1804,7 @@ blunderer
 blunderhead
 blundt
 blundwitted
-blunt*
+blunt
 blurred
 blushing
 blustering
@@ -1851,7 +1851,7 @@ bonmot
 bonne
 bonnebouche
 bonny
-boodle*
+boodle
 booked
 booking
 bookishness
@@ -1975,7 +1975,7 @@ brevipennate
 brewing
 briarean
 briary
-brick*
+brick
 brickcolored
 bridesman
 bridewell
@@ -2080,7 +2080,7 @@ burin
 burletta
 burner
 burning
-burning.shame
+burningshame
 burnished
 burnisher
 burnoose
@@ -2098,7 +2098,7 @@ bushwhacker
 businesslike
 buskin
 buskined
-bust*
+bust
 busted
 bustling
 busybody
@@ -2272,7 +2272,7 @@ cantlet
 cantonment
 cantrap
 canty
-canuck*
+canuck
 canvasser
 canzonet
 caoutchouc
@@ -2577,7 +2577,7 @@ chauntress
 chausse
 chauvinism
 chavar
-chawbacon*
+chawbacon
 cheapen
 checkered
 checkers
@@ -2598,7 +2598,7 @@ chequers
 cherrycolored
 chersonese
 chessboard
-chestnut*
+chestnut
 chevalglass
 chevronne
 chiaroscuro
@@ -2615,7 +2615,7 @@ chiliad
 chimerical
 chimes
 chiming
-chink*
+chink
 chinking
 chipping
 chirography
@@ -2679,7 +2679,7 @@ chruchwarden
 chrysalis
 chrysology
 chuckaluck
-chuckerout*
+chuckerout
 chucklehead
 chudder
 chupatty
@@ -2864,7 +2864,7 @@ clutches
 clypeate
 clypeiform
 clyster
-co*ordination
+coordination
 coacervate
 coacervation
 coaction
@@ -3509,7 +3509,7 @@ coxswain
 cozenage
 crabbed
 crablike
-crackajack*
+crackajack
 crackbrained
 cracked
 cracker
@@ -3539,7 +3539,7 @@ crassamentum
 crassitude
 craunch
 craving
-crawl*
+crawl
 crayons
 crazed
 creamcolored
@@ -3651,7 +3651,7 @@ culbute
 culbuter
 culdelampe
 culdesac
-cull*
+cull
 cullender
 cullibility
 cullion
@@ -3755,7 +3755,7 @@ daedalian
 daeva
 daft
 daggle
-dago*
+dago
 dagon
 daguerreotype
 dahabeah
@@ -4239,7 +4239,7 @@ diastole
 diatessaron
 diathermal
 diathermanous
-dibs*
+dibs
 dicacity
 dicer
 dichroic
@@ -4459,7 +4459,7 @@ disguised
 disguisement
 disgust
 disgusting
-dish*
+dish
 dishabille
 dishearten
 disheartened
@@ -4720,7 +4720,7 @@ doodlesack
 doolie
 dooly
 doomed
-dope*
+dope
 dophagy
 doquet
 dormer
@@ -4754,7 +4754,7 @@ doublydyed
 doubtless
 douceur
 douche
-dough*
+dough
 doughfaced
 doughy
 dovecote
@@ -4881,7 +4881,7 @@ durableness
 durbar
 durga
 durwan
-dust*
+dust
 dustcolored
 duster
 dustman
@@ -5974,7 +5974,7 @@ finis
 finished
 finiteness
 fiord
-fire*
+fire
 firearms
 fireball
 firebarrel
@@ -6113,7 +6113,7 @@ fluviaatile
 fluxion
 fluxional
 fluxions
-flyer*
+flyer
 flying
 flyleaf
 flytrap
@@ -6467,7 +6467,7 @@ garrotte
 garrotto
 garrulity
 garterblue
-gas*
+gas
 gascon
 gasconade
 gasconading
@@ -6669,7 +6669,7 @@ goloshes
 gomashta
 gondolier
 goneness
-goner*
+goner
 goniometry
 gonorrhea
 goodhumored
@@ -6679,7 +6679,7 @@ goodmannered
 goodnatured
 goods
 goodwife
-gooseberry*
+gooseberry
 gooseberryeyed
 goosecap
 goran
@@ -6750,7 +6750,7 @@ gravitation
 gravity
 grayheaded
 grazier
-grease*
+grease
 greaser
 greatest
 greatgrandchild
@@ -6864,7 +6864,7 @@ gyration
 gyratory
 gyre
 gyve
-h.m.s
+hms
 haberdasher
 habergeon
 habiliment
@@ -6999,7 +6999,7 @@ hawkeyed
 hawking
 hawser
 haycock
-hayseed*
+hayseed
 hazarded
 headforemost
 headgear
@@ -7258,13 +7258,13 @@ hoodwink
 hoodwinked
 hooked
 hooker
-hooligan*
+hooligan
 hopefulness
 hopes
 hopomythumb
 hopper
 hopples
-hor.
+hor
 hornmad
 hornpipe
 horologe
@@ -7426,7 +7426,7 @@ hypsometry
 hysique
 hysterical
 hysterics
-i.o.u
+iou
 iccusion
 icebag
 iceboat
@@ -8256,7 +8256,7 @@ items
 iteration
 iterative
 ixion
-j.p
+jp
 jabber
 jacal
 jacent
@@ -8275,7 +8275,7 @@ jahannan
 jailer
 jalousie
 jamb
-jamboree*
+jamboree
 jansenism
 janty
 japanning
@@ -8284,7 +8284,7 @@ jarring
 jaundiced
 jaunt
 jaws
-jay*
+jay
 jealousness
 jeer
 jehu
@@ -8334,7 +8334,7 @@ jocundity
 johnsonian
 joinder
 joining
-joint*
+joint
 jointure
 joist
 joker
@@ -8390,7 +8390,7 @@ justle
 jutty
 juvenescence
 juvenility
-k.c
+kc
 kadi
 kaffiyeh
 kahin
@@ -8451,7 +8451,7 @@ kip
 kirtle
 kitcat
 kitchener
-kite*
+kite
 kithless
 kittereen
 kleptodipsomania
@@ -8539,7 +8539,7 @@ lais
 lallegro
 lama
 lamarkism
-lambaste*
+lambaste
 lambent
 lambeth
 lambkin
@@ -8950,7 +8950,7 @@ lown
 lowness
 lowthoughted
 lowtoned
-ls.d
+lsd
 lubbard
 lubber
 lubberly
@@ -8990,8 +8990,8 @@ luniform
 lunular
 lunule
 lupanar
-lush*
-lushy*
+lush
+lushy
 lusk
 lusory
 luster
@@ -9015,7 +9015,7 @@ lyophilize
 lyre
 lyrical
 lyrist
-m.p
+mp
 mab
 mabap
 macaroni
@@ -9064,7 +9064,7 @@ magnifico
 magnifier
 magniloquence
 magniloquent
-magsman*
+magsman
 maharaja
 maharajah
 maharani
@@ -9500,7 +9500,7 @@ misbehave
 misbehavior
 misbelief
 misbelieve
-misbeliever.1
+misbeliever1
 miscalculate
 miscalculation
 miscall
@@ -9731,7 +9731,7 @@ mopper
 mopsey
 mopsy
 mopus
-mopus*
+mopus
 morality
 moralize
 morals
@@ -9870,7 +9870,7 @@ mussuk
 mussulman
 mussy
 muster
-mut*
+mut
 mutability
 mutable
 mutagenesis
@@ -9992,7 +9992,7 @@ neolamarkism
 neological
 neologist
 neology
-neonatal[med.]
+neonatal[med]
 neoplatonism
 neoteric
 nephalism
@@ -10022,7 +10022,7 @@ newsmonger
 niais
 niaiserie
 nicely
-nichts[ger.]
+nichts[ger]
 nictate
 nictitate
 nictitation
@@ -10059,9 +10059,9 @@ niter
 nitid
 niveous
 nix
-nix*
+nix
 nixie
-nixie*
+nixie
 nizam
 nizy
 nobility
@@ -10692,7 +10692,7 @@ oxidation
 oxreim
 oxygon
 oxygonal
-p.m
+pm
 pabulum
 pacatolus
 pachydermatous
@@ -10786,7 +10786,7 @@ panegyrical
 panegyrize
 paneling
 pangermanic
-panhandler*
+panhandler
 panharmonic
 panhellenic
 pani
@@ -11257,13 +11257,13 @@ pigwidgeon
 pikeman
 pikstaff
 pilaster
-pile*
+pile
 pileous
 piles
 pilferer
 pilgarlic
 pili
-pill*
+pill
 pillager
 pillarist
 pillion
@@ -11380,7 +11380,7 @@ plowboy
 plowed
 plowing
 plucked
-plugugly*
+plugugly
 plumcolored
 plumigerous
 plumose
@@ -11585,7 +11585,7 @@ precipitancy
 precipitant
 precipitation
 precisely
-precisely.
+precisely
 precisian
 precisianism
 preclusion
@@ -11972,7 +11972,7 @@ pulchritude
 pulcinella
 pulcinello
 pule
-pull*
+pull
 pullet
 pullulate
 pullulation
@@ -12057,7 +12057,7 @@ pythagorism
 pythia
 pythoness
 pyx
-q.c
+qc
 qfever
 quackish
 quacksalver
@@ -12154,7 +12154,7 @@ quivering
 quixotism
 quixotry
 quntain
-quod*
+quod
 quodlibet
 quoit
 quoits
@@ -12849,7 +12849,7 @@ rhapsodical
 rhapsodist
 rheometer
 rhetorical
-rhino*
+rhino
 rhipidate
 rhomb
 rhomboid
@@ -12899,7 +12899,7 @@ rimple
 rimulose
 rinderpest
 ringdove
-ringer*
+ringer
 ringing
 ringleader
 ringworm
@@ -12928,12 +12928,12 @@ roads
 roadstead
 roan
 roanoke
-roarer*
+roarer
 roaring
 robber
 roc
 rocinante
-rock*
+rock
 rockingstone
 rodomontade
 roentgenray
@@ -12963,7 +12963,7 @@ ronian
 roodloft
 roodscreen
 roofless
-rook*
+rook
 rookery
 roomage
 rooster
@@ -12998,7 +12998,7 @@ roulade
 rouleau
 rounded
 roundelay
-rounder*
+rounder
 rounders
 roundlet
 roundness
@@ -13075,7 +13075,7 @@ rutilant
 ruttish
 ryot
 s‚gosiller
-s.s.c
+ssc
 sabaoth
 sabbatarian
 sabbatarianism
@@ -13095,7 +13095,7 @@ sacerdotal
 sacerdotalism
 sachel
 sachet
-sack*
+sack
 sackage
 sackbut
 sacrarium
@@ -13134,7 +13134,7 @@ salmagundi
 salmis
 salmoncolored
 salpeter
-salt*
+salt
 saltation
 saltatoric
 saltatory
@@ -13232,7 +13232,7 @@ saxhorn
 saying
 sayonara
 sbirro
-scab*
+scab
 scabby
 scabies
 scaffolding
@@ -13313,7 +13313,7 @@ scolding
 scolecoid
 scollop
 sconce
-scorcher*
+scorcher
 scorching
 scores
 scoriae
@@ -13335,7 +13335,7 @@ scrannel
 scrapie
 screak
 screaming
-screwed*
+screwed
 screwshaped
 scribbler
 scrimp
@@ -13649,7 +13649,7 @@ shapely
 shapen
 sharer
 sharif
-shark*
+shark
 sharpener
 sharper
 sharpness
@@ -13661,7 +13661,7 @@ shatterpated
 shattery
 shaving
 shears
-shebang*
+shebang
 shebeen
 shedim
 sheeny
@@ -13826,7 +13826,7 @@ skating
 skean
 skedadle
 skeel
-skeesicks*
+skeesicks
 skein
 skeptical
 skepticism
@@ -13834,7 +13834,7 @@ skewed
 skiagraphy
 skilled
 skillfulness
-skin*
+skin
 skindeep
 skinflint
 skipper
@@ -13856,7 +13856,7 @@ slade
 slammerkin
 slammock
 slanderer
-slangwhanger*
+slangwhanger
 slantwise
 slapbang
 slapdash
@@ -13884,7 +13884,7 @@ slippers
 slippy
 slipslod
 slipslop
-slipstick[coll.]
+slipstick[coll]
 slobber
 slopeness
 slopewise
@@ -13934,7 +13934,7 @@ snakestone
 snaky
 sneaking
 snicker
-snide*
+snide
 sniggle
 snipsnap
 sniveling
@@ -13947,8 +13947,8 @@ snowwhite
 snuffcolored
 snuggery
 snugness
-soak*
-soaker*
+soak
+soaker
 soaking
 soaring
 soberminded
@@ -14168,7 +14168,7 @@ sponsorship
 spontaieous
 spontaneousness
 spontoon
-spoof*
+spoof
 spoonmeat
 spoony
 sporaceous
@@ -14203,13 +14203,13 @@ squadrong
 squally
 squanderer
 squandering
-squealer*
+squealer
 squeasy
 squeezable
 squeezers
 squeezing
 squib
-squiffy*
+squiffy
 squireen
 stabiliment
 stabilitate
@@ -14302,7 +14302,7 @@ stewpan
 stickiness
 sticking
 stickler
-stiff*
+stiff
 stiffbacked
 stiffnecked
 stiffness
@@ -14566,7 +14566,7 @@ succulent
 succussion
 suceptibleness
 sucker
-sucker*
+sucker
 sucking
 suckle
 sudarium
@@ -14735,7 +14735,7 @@ sutler
 suttee
 swad
 swaddle
-swag*
+swag
 swagger
 swaggerer
 swaggering
@@ -14761,7 +14761,7 @@ swelling
 sweltered
 sweltering
 swill
-swill*
+swill
 swimming
 swimmingly
 swindler
@@ -14915,7 +14915,7 @@ taxidermy
 taxis
 tazza
 teachable
-teafight*
+teafight
 teaparty
 teapoy
 teaser
@@ -15153,7 +15153,7 @@ timidity
 timist
 timocracy
 timorous
-tin*
+tin
 tinct
 tinctorial
 tingent
@@ -15167,7 +15167,7 @@ tintinnabulary
 tipcat
 tippet
 tippler
-tippybob*
+tippybob
 tipstaff
 tiptop
 tirailleur
@@ -15529,7 +15529,7 @@ truehearted
 truelove
 truepenny
 trull
-trump*
+trump
 trumpeter
 trumpettoned
 trumpettongued
@@ -15632,7 +15632,7 @@ tyrannical
 tyrannize
 tyre
 tyro
-u.s.
+us
 uberous
 uberty
 ubiety
@@ -16731,7 +16731,7 @@ valuable
 valuation
 valueless
 vambrace
-vamoose*
+vamoose
 vampirism
 vancourier
 vandalism
@@ -17193,7 +17193,7 @@ wellweighed
 wellwisher
 wellwooded
 wellworn
-welsher*
+welsher
 welshman
 welter
 wem

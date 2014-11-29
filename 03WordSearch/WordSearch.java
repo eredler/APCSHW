@@ -9,20 +9,20 @@ public class WordSearch{
     //
     //create wordList 
     //
-    public static String[] doIt(){
+    public static String[] doIt(String fileName){
 	ArrayList<String> lines = new ArrayList<String>();
+	String[] arr = new String[lines.size()];
 	try{
-	    Scanner sc = new Scanner(new File("wordListCopy.txt"));
+	    Scanner sc = new Scanner(new File(fileName));
 	    while (sc.hasNextLine()) {
 		lines.add(sc.nextLine());
-	    }	    
-	    String[] arr = lines.toArray(new String[lines.size()]);
-	    //   System.out.println(lines);
+	    }
+	    arr = lines.toArray(new String[lines.size()]);
 	    return arr;
 	}
 	catch (FileNotFoundException e){
 	    System.out.println("file not found");
-	    String[] arr = lines.toArray(new String[lines.size()]);
+	    arr = lines.toArray(new String[lines.size()]);
 	    return arr;
 	}
 	 	

@@ -41,6 +41,11 @@ public class Driver {
 	}
     }
 
+    public static String[] loadWordsFromFile(String fileName, String[] wordBank){
+        wordBank = WordSearch.doIt(fileName);
+	return wordBank;
+    }
+
     public static void main(String[]args){
 
 	try {
@@ -48,7 +53,12 @@ public class Driver {
 	    int numcols = Integer.parseInt(args[1]);
 	    int effort = 10;
 	    int howManyWords = 20;
-	    boolean ansKey = false;
+	    boolean ansKey = false;	    
+	    ArrayList<String> wordsUsed = new ArrayList<String>();
+	    String[] wordBank = new String[0];
+	    wordBank = loadWordsFromFile("wordListCopy.txt", wordBank);      
+	    WordSearch example = new WordSearch(numrows,numcols);
+	    Random r = new Random();
 	    
 	    try {
 		if (Integer.parseInt(args[3]) == 1){
@@ -56,18 +66,12 @@ public class Driver {
 		}
 	    } catch (Exception e) {}
 
-	    Random r = new Random();
 
 	    try {
 		int seed = Integer.parseInt(args[2]);
 	        r = new Random(seed);
 	    } catch (Exception e) {}
 
-	    ArrayList<String> wordsUsed = new ArrayList<String>();
-
-	    String[] wordBank = WordSearch.doIt();
-
-	    WordSearch example = new WordSearch(numrows,numcols);
 
 	    addWordInDriver(example, numrows, numcols, r, wordsUsed, wordBank, effort, howManyWords);
         
