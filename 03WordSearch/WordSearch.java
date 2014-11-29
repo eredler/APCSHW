@@ -71,15 +71,18 @@ public class WordSearch{
         boolean ans = true;
 	for (int i = 0; i < word.length(); i++){
 	    try{
-		if (data[row+dy][col+dx] != '.' && data[row+dy][col+dx] != word.charAt(i)){
+		if (dx == 0 && dy == 0) {
+		    ans = false;
+		    break;
+		} else if (data[row+dy*i][col+dx*i] != '.' && data[row+dy*i][col+dx*i] != word.charAt(i)){
 		    ans = false;
 		    break;
 		} 
-	    }		
-	}
-	catch (IndexOutOfBoundsException e){
-	    ans = false;
-	    break;
+	    }		       
+	    catch (IndexOutOfBoundsException e){
+		ans = false;
+		break;
+	    }
 	}
 	return ans;
     }
@@ -201,14 +204,20 @@ public class WordSearch{
     //
     //tries 50 times (at most) to add a word in the direction dx,dy
     //
-    public boolean addWord(String word, int row, int col,  int dx, int dy){
+    public boolean addWord(String word, int row, int col, int dx, int dy){
 	boolean ans = false;    
-
-	if (checkWord(word, row, col, int dx, int dy)){
-	    for (int i = 0; i < word.length(); i++){
-		data[row+dx*i][col+dy*i] = word.charAt(i);
+	//	System.out.println(word);
+	try{
+	    if (checkWord(word, row, col, dx, dy)){
+		//  System.out.println("success");
+		for (int i = 0; i < word.length(); i++){
+		    //	System.out.println(i);
+		    data[row+dx*i][col+dy*i] = word.charAt(i);
+		}
+		ans = true;
 	    }
-	    ans = true;
+	} catch (IndexOutOfBoundsException e) {
+	    ans = false;
 	}
 
 	return ans;
