@@ -99,7 +99,7 @@ public class WordSearch{
 		//  System.out.println("success");
 		for (int i = 0; i < word.length(); i++){
 		    //	System.out.println(i);
-		    data[row+dx*i][col+dy*i] = word.charAt(i);
+		    data[row+dy*i][col+dx*i] = word.charAt(i);
 		}
 		ans = true;
 	    }

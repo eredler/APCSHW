@@ -61,6 +61,7 @@ public class Driver {
 	    System.out.format("%15s %15s %15s %n", wordsUsed.get(wordsUsed.size()-3), wordsUsed.get(wordsUsed.size()-2), wordsUsed.get(wordsUsed.size()-1));
 	    break;
 	}
+	System.out.println(wordsUsed.size());
     }
 
 
