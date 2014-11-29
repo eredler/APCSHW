@@ -11,20 +11,20 @@ public class WordSearch{
     //
     public static String[] doIt(){
 	ArrayList<String> lines = new ArrayList<String>();
-	 try{
-	     Scanner sc = new Scanner(new File("wordListCopy.txt"));
-	     while (sc.hasNextLine()) {
-		 lines.add(sc.nextLine());
-	     }	    
-	     String[] arr = lines.toArray(new String[lines.size()]);
-	     //   System.out.println(lines);
-	     return arr;
-	 }
-	 catch (FileNotFoundException e){
-	     System.out.println("file not found");
-	     String[] arr = lines.toArray(new String[lines.size()]);
-	     return arr;
-	 }
+	try{
+	    Scanner sc = new Scanner(new File("wordListCopy.txt"));
+	    while (sc.hasNextLine()) {
+		lines.add(sc.nextLine());
+	    }	    
+	    String[] arr = lines.toArray(new String[lines.size()]);
+	    //   System.out.println(lines);
+	    return arr;
+	}
+	catch (FileNotFoundException e){
+	    System.out.println("file not found");
+	    String[] arr = lines.toArray(new String[lines.size()]);
+	    return arr;
+	}
 	 	
     }
     
@@ -69,18 +69,18 @@ public class WordSearch{
     //
     public boolean checkWord(String word, int row, int col, int dx, int dy){
         boolean ans = true;
-	    for (int i = 0; i < word.length(); i++){
-	         try{
-	    	  if (data[row+dy][col+dx] != '.' && data[row+dy][col+dx] != word.charAt(i)){
-		        	ans = false;
-		        	break;
-		          } 
-	          	}		
-	         }
-	         catch (IndexOutOfBoundsException e){
-	        	ans = false;
-	        	break;
-	      }
+	for (int i = 0; i < word.length(); i++){
+	    try{
+		if (data[row+dy][col+dx] != '.' && data[row+dy][col+dx] != word.charAt(i)){
+		    ans = false;
+		    break;
+		} 
+	    }		
+	}
+	catch (IndexOutOfBoundsException e){
+	    ans = false;
+	    break;
+	}
 	return ans;
     }
     
@@ -182,7 +182,7 @@ public class WordSearch{
 			break;
 		    }
 		} else {
-		     if (data[row-i][col+i] != '.' && data[row-i][col+i] != word.charAt(i)){
+		    if (data[row-i][col+i] != '.' && data[row-i][col+i] != word.charAt(i)){
 			ans = false;
 			break;
 		    }
@@ -197,6 +197,23 @@ public class WordSearch{
 	}
 	return ans;
     }
+
+    //
+    //tries 50 times (at most) to add a word in the direction dx,dy
+    //
+    public boolean addWord(String word, int row, int col,  int dx, int dy){
+	boolean ans = false;    
+
+	if (checkWord(word, row, col, int dx, int dy)){
+	    for (int i = 0; i < word.length(); i++){
+		data[row+dx*i][col+dy*i] = word.charAt(i);
+	    }
+	    ans = true;
+	}
+
+	return ans;
+    }
+
 
     //
     //tries 50 times (at most) to add a certain word to the word search horizontally
@@ -296,7 +313,7 @@ public class WordSearch{
 	    for (int x = 0; x < data[0].length; x++){
 		char c = (char)(r.nextInt(26) + 'a');
 		if (data[i][x] == '.'){
-		data[i][x] = c;
+		    data[i][x] = c;
 		}
 	    }
 	}
