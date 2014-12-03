@@ -1,61 +1,35 @@
 public class SuperArray{
-    public static String[] arr;
+    public static Object[] arr;
 
     public SuperArray(){
-	arr = new String[10];
+	arr = new Object[10];
     }
 
     public SuperArray(int len){
-	arr = new String[len];
+	arr = new Object[len];
     }
 
-    public static char compare(String a, String b, int charPlace){
-	char aChar = a.charAt(charPlace);
-	char bChar = b.charAt(charPlace);
-	if (aChar < bChar){
-	    return aChar;
-	} else if (bChar < aChar){
-	    return bChar;
+    public static char compare(char a, char b){
+	if (a > b){
+	    return a;
+	} else if (b > a){
+	    return b;
 	} else {
-	    return '.';
+	    return '';
 	}
     }
 
     public static void sort(){
-	String tester = arr[0];
-	remove(0);
-	for (int i = 0; i < arr.length-2; i++){
-	    int charPlace = 0;
-	    char tempAns = compare(tester,arr[i],charPlace);
-	    boolean running = true;
-	    while (running) {		
-		System.out.println("tempAns: " + tempAns);
-		if (charPlace < tester.length() && charPlace < arr[i].length()){
-		    System.out.println(tester);
-		    System.out.println(arr[i]);
-		    if (tempAns == tester.charAt(charPlace)){
-			System.out.println("greater == tempAns");
-			add(tester, i);
-			tester = arr[i+1];
-			remove(i+1);
-			running = false;
-			i = 0;
-		    } else if (tempAns == arr[i].charAt(charPlace)){
-			System.out.println("greater == arr[i]");			
-			running = false;
-		    } else {
-			System.out.println("equal up to " + charPlace);
-			charPlace++;
-			tempAns = compare(tester,arr[i],charPlace);
-		    }
-		} else {
-		    running = false;
-		}
+	for (int i = 1; i < arr.length; i++){
+	    String first = arr[i-1];
+	    String second = arr[i];
+	    if (first.charAt(i) > second.charAt(i)){}
+	    else if (second.charAt(i) > first.charAt(i)){
+		arr[i-1] = second;
+		arr[i] = first;
+	    } else {
+		
 	    }
-	    System.out.println(arr[0] + arr[1] + arr[2] + arr[3] + arr[4] + arr[5] + arr[6]);
-	    System.out.println(" ");
-	    //   System.out.println("first: " + first);
-	    //	    System.out.println("second: " + second);
 	}
     }
 
@@ -72,9 +46,9 @@ public class SuperArray{
     }
 
     public void resize(int newSize){
-	String[] newArr = new String[newSize];
-	String[] less;
-	String[] more;
+	Object[] newArr = new Object[newSize];
+	Object[] less;
+	Object[] more;
 	if (arr.length > newArr.length){
 	    more = arr;
 	    less = newArr;
@@ -88,12 +62,12 @@ public class SuperArray{
 	arr = newArr;
     }
 
-    public void add(String o){
-	String[] newArr;
+    public void add(Object o){
+	Object[] newArr;
 	if (size() >= arr.length){
-	    newArr = new String[arr.length*2];
+	    newArr = new Object[arr.length*2];
 	} else {
-	    newArr = new String[arr.length];
+	    newArr = new Object[arr.length];
 	}
 	for (int i = 0; i < arr.length; i++){
 	    newArr[i] = arr[i];
@@ -102,12 +76,12 @@ public class SuperArray{
 	arr = newArr;
     }
 
-    public static void add(String o, int index){
-	String[] newArr;
+    public void add(Object o, int index){
+	Object[] newArr;
 	if (size() >= arr.length){
-	    newArr = new String[arr.length*2];
+	    newArr = new Object[arr.length*2];
 	} else {
-	    newArr = new String[arr.length];
+	    newArr = new Object[arr.length];
 	}
 	try {
 	    for (int x = 0; x < index; x++){
@@ -127,7 +101,7 @@ public class SuperArray{
 	arr = newArr;
     }
 
-    public static int size(){
+    public  int size(){
 	int ans = 0;
 	for (int i = 0; i < arr.length; i++){
 	    if (arr[i] != null){
@@ -143,12 +117,12 @@ public class SuperArray{
 	}
     }
 
-    public void set(int index, String e){
+    public void set(int index, Object e){
 	arr[index] = e;
     }
 
-    public String get(int index){
-        String ans;
+    public Object get(int index){
+        Object ans;
         try {
 	    if (index < size()){
 		ans = arr[index];
@@ -162,13 +136,13 @@ public class SuperArray{
 	return ans;
     }
 
-    public static String remove(int index){
-	String ans;
-	String[] newArr;
+    public Object remove(int index){
+	Object ans;
+	Object[] newArr;
 	if (size() <= arr.length/4){
-	    newArr = new String[arr.length/2];
+	    newArr = new Object[arr.length/2];
 	} else {
-	    newArr = new String[arr.length];
+	    newArr = new Object[arr.length];
 	}
 	    try	{
 		if (index < size()){
