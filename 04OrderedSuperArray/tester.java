@@ -3,10 +3,10 @@ public class tester{
     public static void main(String[]args){
 	
 
-	SuperArray a = new SuperArray();
-	SuperArray b = new SuperArray();
+	//	SuperArray a = new SuperArray();
+	//	SuperArray b = new SuperArray();
 	//	OrderedSuperArray a = new OrderedSuperArray();
-	//	OrderedSuperArray b = new OrderedSuperArray(5);
+	OrderedSuperArray b = new OrderedSuperArray(5);
 	/*	System.out.println(a.toString());
 	System.out.println(b.toString());
 	a.add("Hello");
@@ -31,18 +31,19 @@ public class tester{
 	System.out.println(b.remove(1));
 
 	System.out.println(b.toString());*/
-	b.add("hi");
-	b.add("yellow");
-	b.add("red");
-	b.add("emily");
-	b.add("computer");
-	b.add("zebra");
+	/*	b.add("yaaaaa");
+	b.add("zaaaaa");
+	b.add("xaaaaa");*/
+	b.add("eeeeeee");
+	b.add("aaaaaaa");
+	b.add("rrrrrrr");
+	b.add("eeeekkk");
 	System.out.println(b.toString());
 	//	System.out.println(b.get(2));
 	//	System.out.println(b.get(70));
 	//	System.out.println(b.get(b.size()));
 	//	System.out.println(b.get(b.size() - 1));
-	b.sort();
+	//	b.sort();
 	System.out.println(b.toString());
     }
 

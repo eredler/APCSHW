@@ -11,62 +11,15 @@ public class SuperArray{
 	arr = new String[len];
     }
 
-    public static char compare(String a, String b, int charPlace){	
-	char aChar = a.charAt(charPlace);
-	char bChar = b.charAt(charPlace);
-	if (a.equals(b)){
-	    return aChar;
-	} else if (aChar > bChar){
-	    return aChar;
-	} else if (bChar > aChar){
-	    return bChar;
-	} else {
-	    return '.';
-	}
-    }
-
-    public static void sort(){
-	for (int i = 0; i < arr.length; i++){
-	    System.out.println(arr[0] + " " + arr[1] + " " + arr[2] + " " + arr[3] + " " + arr[4] + " " + arr[5]);
-	    System.out.println(".");
-	    System.out.println(".");
-	    System.out.println(".");
-	    try {
-		String tester = arr[i];
-		System.out.println("tester: " + tester);
-		for (int x = 0; x < arr.length; x++){
-		    System.out.println(" ");
-		    System.out.println(" ");
-		    System.out.println("\tround " + x);
-		    String current = arr[x];
-		    System.out.println("\tcurrent: " + current);
-		    int charPlace = 0;
-		    char compareAns = compare(tester,current,charPlace);		
-		    if (compareAns == current.charAt(charPlace)){
-			remove(i);
-			add(tester,x);
-			System.out.println("\t\tA: compareAns == " + compareAns);
-			break;
-		    } else if (compareAns == tester.charAt(charPlace)){
-			System.out.println("\t\tB: compareAns == " + compareAns);
-		    } else {
-			System.out.println("\t\tC: else");
-			while (compareAns == '.' && charPlace < tester.length() & charPlace < current.length()){
-			    compareAns = compare(tester,current,charPlace);
-			    charPlace++;
-			}
-		    }
-		}
-	    } catch (NullPointerException e){
-		i = arr.length;
-		break;
+    public void sort(){
+	for (int i = 0; i < arr.size(); i++){
+	    for (int x = 0; x < arr.size(); x++){
+		
 	    }
 	}
-	    
     }
 
-
-public String toString(){
+    public String toString(){
     String ans = "[ ";
     for (int i = 0; i < arr.length; i++){
 	if (arr[i] != null){
@@ -95,7 +48,7 @@ public void resize(int newSize){
     arr = newArr;
 }
 
-public static void add(String o){
+public void add(String o){
     String[] newArr;
     if (size() >= arr.length){
 	newArr = new String[arr.length*2];
@@ -109,7 +62,7 @@ public static void add(String o){
     arr = newArr;
 }
 
-public static void add(String o, int index){
+public void add(String o, int index){
     String[] newArr;
     if (size() >= arr.length){
 	newArr = new String[arr.length*2];
@@ -134,7 +87,7 @@ public static void add(String o, int index){
     arr = newArr;
 }
 
-public static int size(){
+public int size(){
     int ans = 0;
     for (int i = 0; i < arr.length; i++){
 	if (arr[i] != null){
@@ -169,7 +122,7 @@ public String get(int index){
     return ans;
 }
 
-public static String remove(int index){
+public String remove(int index){
     String ans;
     String[] newArr;
     if (size() <= arr.length/4){

@@ -20,7 +20,7 @@ public class OrderedSuperArray extends SuperArray{
     }
 
     public void set(int index, String e){
-	super.add(o);
+	super.add(e);
 	sort();
     }
 
