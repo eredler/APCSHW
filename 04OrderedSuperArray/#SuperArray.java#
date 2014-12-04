@@ -69,7 +69,7 @@ public class SuperArray{
    public void sort() {
         int n = arr.length;
 	try {
-        for (int i = 1; i < n; i++) {
+	    for (int i = 1; i < n; i++) {
             String key = arr[i];
             int x = i-1;
             while ( (x > -1) && ( arr[x].compareTo(key) > 0 ) ) {

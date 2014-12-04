@@ -19,9 +19,10 @@ public class OrderedSuperArray extends SuperArray{
 	sort();
     }
 
-    public void set(int index, String e){
+    public String set(int index, String e){
 	super.add(e);
 	sort();
+	return e;
     }
 
 }
