@@ -66,7 +66,7 @@ public class SuperArray{
 	}
     }
 
-  public void sort(){
+    public void sort(){
 	if (size() == arr.length){
             resize(arr.length*2);
         }
@@ -81,9 +81,12 @@ public class SuperArray{
 	}
     }
    
+
+
     public int size(){
 	return numEl;
     }
+
 
     public void clear(){
 	for (int i = 0; i < arr.length; i++){

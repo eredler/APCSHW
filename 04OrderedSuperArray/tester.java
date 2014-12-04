@@ -1,5 +1,26 @@
 public class tester{
 
+    public static void verifySort(){
+	OrderedSuperArray mySort = new OrderedSuperArray(10);
+	OrderedSuperArray builtInSort = new OrderedSuperArray(10);
+	mySort.add("emily");
+	mySort.add("apple");
+	mySort.add("rainbow");
+	mySort.add("apricot");
+	mySort.add("computer");
+	mySort.add("zebra");
+	mySort.add("a");
+	builtInSort.add("emily");
+	builtInSort.add("apple");
+	builtInSort.add("rainbow");
+	builtInSort.add("apricot");
+	builtInSort.add("computer");
+	builtInSort.add("zebra");
+	builtInSort.add("a");
+	System.out.println("My sorting method: " + mySort.toString());
+	System.out.println("Built-in sorting method: " + builtInSort.toString());
+    }
+
     public static void main(String[]args){
 	
 
@@ -34,17 +55,20 @@ public class tester{
 	/*	b.add("yaaaaa");
 	b.add("zaaaaa");
 	b.add("xaaaaa");*/
-	b.add("eeeeeee");
-	b.add("aaaaaaa");
-	b.add("rrrrrrr");
-	b.add("eeeekkk");
-	System.out.println(b.toString());
+	/*	b.add("emily");
+	b.add("apple");
+	b.add("rainbow");
+	b.add("apricot");
+	b.add("computer");
+	b.add("zebra");
+	b.add("a");
+	System.out.println(b.toString());*/
 	//	System.out.println(b.get(2));
 	//	System.out.println(b.get(70));
 	//	System.out.println(b.get(b.size()));
 	//	System.out.println(b.get(b.size() - 1));
 	//	b.sort();
-	System.out.println(b.toString());
+	verifySort();
     }
 
 }
