@@ -1,0 +1,1 @@
+To verify that my insertion sort method worked, I created a new SuperArray in my tester (driver). I added 10 words in a random order and then printed the array. I then sorted it and then printed the result.
