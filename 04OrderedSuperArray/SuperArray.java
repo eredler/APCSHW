@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class SuperArray{
     public static String[] arr;
 
@@ -22,40 +24,27 @@ public class SuperArray{
     }
 
     public static void sort(){
-	String tester = arr[0];
-	remove(0);
-	for (int i = 0; i < arr.length-2; i++){
-	    int charPlace = 0;
-	    char tempAns = compare(tester,arr[i],charPlace);
-	    boolean running = true;
-	    while (running) {		
-		System.out.println("tempAns: " + tempAns);
-		if (charPlace < tester.length() && charPlace < arr[i].length()){
-		    System.out.println(tester);
-		    System.out.println(arr[i]);
-		    if (tempAns == tester.charAt(charPlace)){
-			System.out.println("greater == tempAns");
-			add(tester, i);
-			tester = arr[i+1];
-			remove(i+1);
-			running = false;
-			i = 0;
-		    } else if (tempAns == arr[i].charAt(charPlace)){
-			System.out.println("greater == arr[i]");			
-			running = false;
-		    } else {
-			System.out.println("equal up to " + charPlace);
-			charPlace++;
-			tempAns = compare(tester,arr[i],charPlace);
-		    }
+	for (int i = 0; i < arr.length; i++){
+	    String tester = arr[i];
+	    for (int x = 0; x < arr.length-1; x++){
+		String current = arr[x];
+		int charPlace = 0;
+		char compareAns = compare(tester,current,charPlace);		
+		if (compareAns == current.charAt(charPlace)){
+		    remove(i);
+		    add(tester,x);
+		    System.out.println("compareAns == " + current);
+		    break;
+		} else if (compareAns == tester.charAt(charPlace)){
+		    System.out.println("compareAns == " + tester);
 		} else {
-		    running = false;
+		    System.out.println("else");
+		    while (compareAns == '.' && charPlace < tester.length() & charPlace < current.length()){
+			compareAns = compare(tester,current,charPlace);
+			charPlace++;
+		    }
 		}
 	    }
-	    System.out.println(arr[0] + arr[1] + arr[2] + arr[3] + arr[4] + arr[5] + arr[6]);
-	    System.out.println(" ");
-	    //   System.out.println("first: " + first);
-	    //	    System.out.println("second: " + second);
 	}
     }
 
@@ -88,7 +77,7 @@ public class SuperArray{
 	arr = newArr;
     }
 
-    public void add(String o){
+    public static void add(String o){
 	String[] newArr;
 	if (size() >= arr.length){
 	    newArr = new String[arr.length*2];

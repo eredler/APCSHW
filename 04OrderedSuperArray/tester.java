@@ -1,9 +1,10 @@
-public class tester {
+public class tester{
 
     public static void main(String[]args){
 	
+
 	SuperArray a = new SuperArray();
-	SuperArray b = new SuperArray(5);
+	SuperArray b = new SuperArray();
 	//	OrderedSuperArray a = new OrderedSuperArray();
 	//	OrderedSuperArray b = new OrderedSuperArray(5);
 	/*	System.out.println(a.toString());
@@ -27,25 +28,22 @@ public class tester {
 	System.out.println(b.toString());
 	b.remove(4);
 	System.out.println(b.toString());
-	System.out.println(b.remove(1));*/
+	System.out.println(b.remove(1));
 
-	//	System.out.println(b.toString());
+	System.out.println(b.toString());*/
 	b.add("hi");
 	b.add("yellow");
-	b.add("red",1);
+	b.add("red");
 	b.add("emily");
-	b.add("dad");
-	b.add("yoyo");
-	b.add("poop");
-	//	System.out.println(b.toString());
+	b.add("computer");
+	b.add("zebra");
+	System.out.println(b.toString());
 	//	System.out.println(b.get(2));
 	//	System.out.println(b.get(70));
 	//	System.out.println(b.get(b.size()));
 	//	System.out.println(b.get(b.size() - 1));
-	System.out.println(b.toString());
 	b.sort();
 	System.out.println(b.toString());
-
     }
 
 }
