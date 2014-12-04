@@ -66,25 +66,21 @@ public class SuperArray{
 	}
     }
 
-   public void sort() {
-        int n = arr.length;
-	try {
-        for (int i = 1; i < n; i++) {
-            String key = arr[i];
-            int x = i-1;
-            while ( (x > -1) && ( arr[x].compareTo(key) > 0 ) ) {
-                arr[x+1] = arr[x];
-                x--;
-            }
-            arr[x+1] = key;
+  public void sort(){
+	if (size() == arr.length){
+            resize(arr.length*2);
         }
-	} catch (NullPointerException e){
-	    throw new NullPointerException();
+	for (int i = 0; i < size(); i++){
+	    String s = get(i);
+	    int pos = i;
+	    while (pos > 0 && get(pos-1).compareTo(s) > 0){
+		arr[pos] = arr[pos-1];
+		pos--;
+	    }
+	    arr[pos] = s;
 	}
     }
    
-
-
     public int size(){
 	return numEl;
     }
