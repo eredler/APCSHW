@@ -32,8 +32,18 @@ public class SuperArray{
 	    i++;
 	}
 	arr = newArr;
+    }   
+
+    public void badInsertionSort(){
+        OrderedSuperArray c = new OrderedSuperArray();
+        while( this.size() > 0){ 
+            c.add(this.remove(0));
+        }
+        while(c.size() > 0){
+            this.add(c.remove(0));
+        }
     }
-    
+
     public void add(String o){
 	if (size() == arr.length){
 	    resize(arr.length*2);
@@ -80,8 +90,7 @@ public class SuperArray{
 	    arr[pos] = s;
 	}
     }
-   
-
+ 
 
     public int size(){
 	return numEl;
