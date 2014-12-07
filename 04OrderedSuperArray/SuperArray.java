@@ -141,4 +141,8 @@ public class SuperArray{
 	return ans;
     }
 
+    public int getNumEl(){
+	return numEl;
+    }
+
 }
