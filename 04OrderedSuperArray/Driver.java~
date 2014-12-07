@@ -1,0 +1,14 @@
+import java.util.*;
+
+public class Driver{
+    public static void main(String[]args){
+    Random r = new Random(4523);
+    SuperArray Phil = new SuperArray();
+    for(int i = 0; i </*length of the list you want*/ ; i++){
+        Phil.add(""+ r.nextInt(/*how many different elements you want*/));
+    }
+    System.out.println(Phil.check());
+    Phil./*yourSortCommand()*/;
+    System.out.println(Phil.check());
+    }
+}
