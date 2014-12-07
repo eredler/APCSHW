@@ -145,4 +145,16 @@ public class SuperArray{
 	return numEl;
     }
 
+    public static int find(String target, SuperArray a){
+	int i = 0;
+	while (a.get(i) != target && i < a.size()){
+	    i++;
+	}
+	if (i >= a.size()){
+	    return -1;
+	} else {
+	    return i;
+	}
+    }
+
 }
