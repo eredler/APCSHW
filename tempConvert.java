@@ -11,7 +11,7 @@ public class tempConvert extends JFrame implements ActionListener {
   private JButton convert, clear;
   private JLabel answer;
 
-  public Gui() {
+  public GuiTempConvert() {
     this.setTitle("Temperature Converter");
     this.setSize(500, 500);
     this.setLocation(100, 100);
@@ -58,7 +58,7 @@ public class tempConvert extends JFrame implements ActionListener {
   
   
  public static void main(String[] args) {
-        tempConvert x = new tempConvert();
+        GuiTempConvert x = new GuiTempConvert();
         x.setVisible(true);
    }
   }   
