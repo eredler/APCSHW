@@ -56,7 +56,6 @@ public class tempConvert extends JFrame implements ActionListener {
   	} 
   }
   
-}
   
  public static void main(String[] args) {
         tempConvert x = new tempConvert();
@@ -64,4 +63,3 @@ public class tempConvert extends JFrame implements ActionListener {
    }
   }   
 
-}
