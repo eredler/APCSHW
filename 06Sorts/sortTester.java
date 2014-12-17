@@ -11,7 +11,7 @@ public class sortTester {
 	}
 
 	System.out.println(a.toString());
-	BubbleSort.bubbleSort(a.toString());
+	bubbleSort(a.toString());
 	System.out.println(a.toString());
     }
 
