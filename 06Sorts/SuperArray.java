@@ -1,20 +1,23 @@
 public class SuperArray{
-    public static Object[] arr;
+    public String[] arr;
+    public int numEl;
+    
 
     public SuperArray(){
-	arr = new Object[10];
+	arr = new String[10];
     }
 
     public SuperArray(int len){
-	arr = new Object[len];
+	arr = new String[len];
+	numEl = 0;
     }
 
     public String toString(){
 	String ans = "[ ";
 	for (int i = 0; i < arr.length; i++){
 	    if (arr[i] != null){
-	    ans += arr[i];
-	    ans += " ";
+		ans += arr[i];
+		ans += " ";
 	    }
 	}
 	ans += "]";
@@ -22,128 +25,136 @@ public class SuperArray{
     }
 
     public void resize(int newSize){
-	Object[] newArr = new Object[newSize];
-	Object[] less;
-	Object[] more;
-	if (arr.length > newArr.length){
-	    more = arr;
-	    less = newArr;
-	} else {
-	    more = newArr;
-	    less = arr;
-	}
-	for (int i = 0; i < less.length; i++){
+	String[] newArr = new String[newSize];
+	int i = 0;
+	while (i < arr.length && i < newSize){
 	    newArr[i] = arr[i];
+	    i++;
 	}
 	arr = newArr;
+    }   
+
+    public void badInsertionSort(){
+        OrderedSuperArray c = new OrderedSuperArray();
+        while( this.size() > 0){ 
+            c.add(this.remove(0));
+        }
+        while(c.size() > 0){
+            this.add(c.remove(0));
+        }
     }
 
-    public void add(Object o){
-	Object[] newArr;
-	if (size() >= arr.length){
-	    newArr = new Object[arr.length*2];
+    public void add(String o){
+	if (size() == arr.length){
+	    resize(arr.length*2);
+	    add(o);
 	} else {
-	    newArr = new Object[arr.length];
-	}
-	for (int i = 0; i < arr.length; i++){
-	    newArr[i] = arr[i];
-	}
-	newArr[size()] = o;
-	arr = newArr;
+	    arr[size()] = o;
+	    numEl++;
+	}  
     }
 
-    public void add(Object o, int index){
-	Object[] newArr;
-	if (size() >= arr.length){
-	    newArr = new Object[arr.length*2];
+    public void add(String o, int index){   
+	String ans[] = new String[arr.length];
+	if (size() == arr.length){
+	    resize(arr.length * 2);
+	    add(o,index);
 	} else {
-	    newArr = new Object[arr.length];
-	}
-	try {
-	    for (int x = 0; x < index; x++){
-		newArr[x] = arr[x];
+	    try {
+		for (int i = 0; i < index; i++){
+		    ans[i] = arr[i];
+		}
+		ans[index] = o;
+		for (int i = index; i < size(); i++){
+		    ans[i+1] = arr[i];
+		}
+	    } catch (IndexOutOfBoundsException e) {
+		throw new IndexOutOfBoundsException();
 	    }
-	    newArr[index] = o;
-	    for (int y = index; y < size(); y++){
-		newArr[y+1] = arr[y];
-	    } 
+	    arr = ans;
+	    numEl++;
 	}
-	catch (IndexOutOfBoundsException e) {
-	    System.out.println("The index needs to be greater than or equal to zero and less than " + size() + ".");	
-	    for (int i = 0; i < size(); i++){
-		newArr[i] = arr[i];
-	    }
-	}
-	arr = newArr;
     }
 
-    public  int size(){
-	int ans = 0;
-	for (int i = 0; i < arr.length; i++){
-	    if (arr[i] != null){
-		ans++;
+    public void insertionSort(){
+	if (size() == arr.length){
+            resize(arr.length*2);
+        }
+	for (int i = 0; i < size(); i++){
+	    String s = get(i);
+	    int pos = i;
+	    while (pos > 0 && get(pos-1).compareTo(s) > 0){
+		arr[pos] = arr[pos-1];
+		pos--;
 	    }
+	    arr[pos] = s;
 	}
-	return ans;
     }
+ 
+
+    public int size(){
+	return numEl;
+    }
+
 
     public void clear(){
 	for (int i = 0; i < arr.length; i++){
 	    arr[i] = null;
 	}
+	numEl = 0;
     }
 
-    public void set(int index, Object e){
-	arr[index] = e;
+    public String set(int index, String s){
+	try {	    
+	    String x = arr[index];
+	    arr[index] = s;
+	    return x;
+	} catch (IndexOutOfBoundsException e){
+	    throw new IndexOutOfBoundsException();
+	}
+	
     }
 
-    public Object get(int index){
-        Object ans;
-        try {
-	    if (index < size()){
-		ans = arr[index];
-	    } else {
-		ans  = "The index needs to be greater than or equal to zero and less than " + size() + ".";	
-	    }
+    public String get(int index){
+	try {
+	    String ans = arr[index];
+	    return ans;
 	}
 	catch (IndexOutOfBoundsException e){
-	    ans  = "The index needs to be greater than or equal to zero and less than " + size() + ".";		
+	    throw new IndexOutOfBoundsException();
+	}
+    }
+
+    public String remove(int index){
+	String ans;
+	if (size() <= arr.length/4){
+	    resize(arr.length/2);
+	}
+	try {	    
+	    ans = arr[index];
+	    for (int i = index; i < size()-1 ; i++){
+		arr[i] = arr[i+1];
+	    }
+	} catch (IndexOutOfBoundsException e) {
+	    throw new IndexOutOfBoundsException();
 	}
 	return ans;
     }
 
-    public Object remove(int index){
-	Object ans;
-	Object[] newArr;
-	if (size() <= arr.length/4){
-	    newArr = new Object[arr.length/2];
-	} else {
-	    newArr = new Object[arr.length];
+    public int getNumEl(){
+	return numEl;
+    }
+
+    public static int find(String target, SuperArray a){
+	int i = 0;
+	while (a.get(i) != target && i < a.size()){
+	    i++;
 	}
-	    try	{
-		if (index < size()){
-		    for (int i = 0; i < index; i++){
-			newArr[i] = arr[i];
-		    }
-		    ans = arr[index];
-		    for (int i = index; i < size(); i++){
-			newArr[i] = arr[i+1];
-		    }
-		} else {
-		    ans = "The index needs to be greater than or equal to zero and less than " + size() + ".";
-		    for (int i = 0; i < arr.length; i++){
-		    newArr[i] = arr[i];
-		    }
-		}
-	    }
-	    catch (IndexOutOfBoundsException e){
-	        ans = "The index needs to be greater than or equal to zero and less than " + size() + ".";		
-		for (int i = 0; i < arr.length; i++){
-		    newArr[i] = arr[i];
-		}
-	    }
-	arr = newArr;
-	return ans;
+	if (i >= a.size()){
+	    return -1;
+	} else {
+	    return i;
+	}
     }
 
 }

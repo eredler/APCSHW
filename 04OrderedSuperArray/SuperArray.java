@@ -76,7 +76,7 @@ public class SuperArray{
 	}
     }
 
-    public void sort(){
+    public void insertionSort(){
 	if (size() == arr.length){
             resize(arr.length*2);
         }

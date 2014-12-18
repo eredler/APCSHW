@@ -1,0 +1,24 @@
+public cass Sorts { 
+
+public static void selection(int[] A){
+	for (int i = 0; i < A.length; i ++){
+	    int x = getMinIndex(A, i);
+	    int p = A[i];
+	    A[i] = A[x];
+	    A[x] = p;
+	}
+    }
+    
+    private static int getMinIndex(int[] A, int start){
+	int min = A[start];
+	int i = start;
+	for (int x = start; x < A.length; x ++){
+	    if (A[x] < min){
+		min = A[x];
+		i = x;
+	    }
+	}
+        return i;
+    }
+
+}
