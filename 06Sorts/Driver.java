@@ -1,5 +1,4 @@
-import java.util.Random;
-import java.util.Arrays;
+import java.util.*;
 
 public class Driver{
 
@@ -10,13 +9,15 @@ public class Driver{
 	int [] i = new int[100000];
 	int [] s = new int[100000];
 	int [] c = new int[100000];
+	int [] rx = new int[100000];
 	int a;
 	for (int x = 0; x < 100000; x++){
-	    a = r.nextInt(2000000000);
+	    a = r.nextInt(1000);
 	    b[x] = a;
 	    i[x] = a;
 	    s[x] = a;
 	    c[x] = a;
+	    rx[x] = a;
 	}
 	
 	start = System.currentTimeMillis();
@@ -43,8 +44,11 @@ public class Driver{
 	System.out.println("arrays.sort: ");
 	System.out.println(end - start);
 	
-
-
 	
+	start = System.currentTimeMillis();
+	Sorts.radix(rx);
+	end = System.currentTimeMillis();
+	System.out.println("radix: ");
+	System.out.println(end - start);
     }
 }
